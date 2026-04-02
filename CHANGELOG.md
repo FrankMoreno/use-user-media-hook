@@ -1,3 +1,13 @@
+# 1.0.0 (2026-04-02)
+
+
+### Bug Fixes
+
+* add npm publish action ([1c0db01](https://github.com/FrankMoreno/use-user-media-hook/commit/1c0db01af6f15842b8e495fdcf68dddcb7742f18))
+* focus on a single deployment method ([76ea6a7](https://github.com/FrankMoreno/use-user-media-hook/commit/76ea6a7dd2565187913805c29c613a3c71499827))
+* stick to one node version ([62c0b6b](https://github.com/FrankMoreno/use-user-media-hook/commit/62c0b6b5e18a39a7cf604f1498105f9ddc9e9c32))
+* update publish workflows ([5c1fc44](https://github.com/FrankMoreno/use-user-media-hook/commit/5c1fc440096088325ce460ddac186ce017769385))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
