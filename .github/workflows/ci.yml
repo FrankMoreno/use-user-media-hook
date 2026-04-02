@@ -12,12 +12,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Use Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: "24"
+          node-version: "24.x"
           cache: "npm"
 
       - name: Install dependencies
@@ -25,6 +25,9 @@ jobs:
 
       - name: Lint code
         run: npm run lint
+
+      - name: Format code
+        run: npm run format
 
       - name: Build
         run: npm run build
