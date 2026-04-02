@@ -12,7 +12,7 @@ interface UseUserMediaReturn {
 	isAudioEnabled: boolean;
 	isVideoEnabled: boolean;
 
-	getUserMediaStream: (constraints: MediaStreamConstraints) => Promise<void>;
+	getUserMediaStream: (constraints?: MediaStreamConstraints) => Promise<void>;
 	stopUserMediaStream: () => void;
 	setAudioState: (enabled: boolean) => void;
 	setVideoState: (enabled: boolean) => void;
@@ -74,7 +74,7 @@ export function useUserMedia(): UseUserMediaReturn {
 		});
 		localStream.current = null;
 
-		if (isMountedRef.current) {
+		if (!isMountedRef.current) {
 			return;
 		}
 
