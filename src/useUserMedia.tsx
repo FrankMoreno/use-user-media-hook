@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState } from 'react';
 
 interface UseUserMediaReturn {
 	stream: MediaStream | null;
@@ -91,12 +91,12 @@ export function useUserMedia(): UseUserMediaReturn {
 			constraints: MediaStreamConstraints = defaultConstraints,
 		): Promise<void> => {
 			if (!isUserMediaSupported()) {
-				setError(new Error("getUserMedia is not supported in this browser."));
+				setError(new Error('getUserMedia is not supported in this browser.'));
 				return;
 			}
 
 			if (isLoadingRef.current) {
-				setError(new Error("Media stream request is already in progress."));
+				setError(new Error('Media stream request is already in progress.'));
 				return;
 			}
 
@@ -165,7 +165,7 @@ export function useUserMedia(): UseUserMediaReturn {
 
 function isUserMediaSupported(): boolean {
 	if (
-		typeof navigator === "undefined" ||
+		typeof navigator === 'undefined' ||
 		!navigator.mediaDevices?.getUserMedia
 	) {
 		return false;
