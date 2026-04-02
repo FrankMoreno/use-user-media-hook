@@ -1,0 +1,27 @@
+{
+	"name": "use-user-media-hook",
+	"version": "0.1.0",
+	"description": "Hook to access user audio and video devices",
+	"homepage": "https://github.com/FrankMoreno/use-user-media-hook#readme",
+	"bugs": {
+		"url": "https://github.com/FrankMoreno/use-user-media-hook/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/FrankMoreno/use-user-media-hook.git"
+	},
+	"license": "ISC",
+	"author": "",
+	"type": "module",
+	"main": "src/useUserMedia.tsx",
+	"scripts": {
+		"test": "test"
+	},
+	"dependencies": {
+		"react": "^19.2.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.10",
+		"@types/react": "^19.2.14"
+	}
+}
