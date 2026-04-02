@@ -1,6 +1,6 @@
 {
 	"name": "use-user-media-hook",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Hook to access user audio and video devices",
 	"homepage": "https://github.com/FrankMoreno/use-user-media-hook#readme",
 	"bugs": {

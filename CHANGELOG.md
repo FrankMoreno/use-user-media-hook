@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/FrankMoreno/use-user-media-hook/compare/v1.0.0...v1.0.1) (2026-04-02)
+
+
+### Bug Fixes
+
+* update deployment token ([d58f77f](https://github.com/FrankMoreno/use-user-media-hook/commit/d58f77fef9dda4efb699fd293df7b551ddfcad58))
+
 # 1.0.0 (2026-04-02)
 
 
