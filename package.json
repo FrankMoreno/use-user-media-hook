@@ -11,17 +11,41 @@
 		"url": "git+https://github.com/FrankMoreno/use-user-media-hook.git"
 	},
 	"license": "ISC",
-	"author": "",
+	"author": "Frank Moreno",
 	"type": "module",
-	"main": "src/useUserMedia.tsx",
+	"main": "./dist/useUserMedia.js",
+	"types": "./dist/useUserMedia.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/useUserMedia.js",
+			"types": "./dist/useUserMedia.d.ts"
+		}
+	},
+	"files": [
+		"dist"
+	],
 	"scripts": {
-		"test": "test"
+		"build": "tsc --outDir dist --declaration --emitDeclarationOnly",
+		"lint": "biome check src/",
+		"lint:fix": "biome check src/ --fix",
+		"format": "biome format src/ --write",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"prepare": "npm run build"
 	},
 	"dependencies": {
 		"react": "^19.2.4"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.10",
-		"@types/react": "^19.2.14"
+		"@types/react": "^19.2.14",
+		"semantic-release": "^24.0.0",
+		"typescript": "^5.4.5"
+	},
+	"engines": {
+		"node": ">=18.0.0",
+		"npm": ">=9.0.0"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
