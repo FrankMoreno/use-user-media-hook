@@ -1,0 +1,24 @@
+# Development files
+src/
+*.tsx
+*.ts
+
+# Config and documentation
+.github/
+.gitignore
+biome.json
+tsconfig.json
+.releaserc.json
+CHANGELOG.md
+README.md
+
+# Package management
+package-lock.json
+node_modules/
+
+# Dependencies info
+*.map
+
+# Testing
+coverage/
+.nyc_output/
