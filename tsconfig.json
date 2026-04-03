@@ -1,27 +1,20 @@
 {
-	"compilerOptions": {
-		"target": "ES2020",
-		"useDefineForClassFields": true,
-		"lib": ["ES2020", "DOM", "DOM.Iterable"],
-		"module": "ESNext",
-		"skipLibCheck": true,
-		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
-		"strict": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noFallthroughCasesInSwitch": true,
-		"declaration": true,
-		"declarationMap": true,
-		"sourceMap": true,
-		"baseUrl": ".",
-		"paths": {
-			"*": ["node_modules/*"]
-		},
-		"outDir": "./dist",
-		"rootDir": "./src",
-		"jsx": "react-jsx"
-	},
-	"include": ["src"],
-	"exclude": ["node_modules", "dist"]
+  "compilerOptions": {
+    "declaration": true,
+    "pretty": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "lib": ["ESNEXT", "DOM", "DOM.Iterable"],
+    // use global types for vite's expect, describe, etc.
+    "types": ["vitest/globals"],
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+		"rootDir": "src",
+		"outDir": "dist",
+  },
+  "exclude": ["node_modules", "dist", "tests"]
 }

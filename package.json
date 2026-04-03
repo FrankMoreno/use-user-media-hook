@@ -26,17 +26,23 @@
 	],
 	"scripts": {
 		"build": "tsc",
-		"check": "biome check src/",
+		"check": "biome check src/ tests/",
+		"check:fix": "biome check src/ tests/ --fix",
 		"lint": "biome lint src/",
 		"lint:fix": "biome lint src/ --fix",
 		"format": "biome format src/ --write",
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "vitest run",
 		"prepare": "npm run build"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.10",
+		"@testing-library/react": "^16.3.2",
+		"@types/jsdom": "^28.0.1",
 		"@types/react": "^19.2.14",
-		"typescript": "^5.4.5"
+		"jsdom": "^29.0.1",
+		"react": "^19.2.4",
+		"typescript": "^5.4.5",
+		"vitest": "^4.1.2"
 	},
 	"peerDependencies": {
 		"react": ">=18.0.0"
