@@ -87,12 +87,6 @@ This project uses GitHub Actions for continuous integration and automated releas
 - **CI Workflow** (`.github/workflows/ci.yml`): Runs linting and builds on pull requests and pushes to `main` and `develop` branches
 - **Release Workflow** (`.github/workflows/release.yml`): Automatically publishes releases to npm using semantic-release
 
-### Setting up NPM publishing
-
-1. Generate an npm token at https://www.npmjs.com/settings/~/tokens
-2. Add it as a secret in your GitHub repository:
-   - Go to Settings → Secrets and variables → Actions
-   - Create a new secret named `NPM_TOKEN` with your npm token value
 
 ### Release Process
 
