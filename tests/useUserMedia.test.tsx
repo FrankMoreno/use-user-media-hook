@@ -43,10 +43,6 @@ describe('useUserMedia', () => {
 		mockGetUserMedia.mockResolvedValue(createMockStream());
 	});
 
-	// afterEach(() => {
-	// 	vi.clearAllMocks();
-	// });
-
 	describe('initialization', () => {
 		it('should initialize with default state', () => {
 			const { result } = renderHook(() => useUserMedia());
