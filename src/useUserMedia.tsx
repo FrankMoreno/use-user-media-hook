@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 interface UseUserMediaReturn {
 	stream: MediaStream | null;
@@ -105,10 +105,10 @@ export function useUserMedia(): UseUserMediaReturn {
 			isLoadingRef.current = true;
 			setIsLoading(true);
 
-			let stream: MediaStream | null = null;
+			let newStream: MediaStream | null = null;
 
 			try {
-				stream = await navigator.mediaDevices.getUserMedia(constraints);
+				newStream = await navigator.mediaDevices.getUserMedia(constraints);
 			} catch (err) {
 				const error = err instanceof Error ? err : new Error(String(err));
 				isLoadingRef.current = false;
@@ -118,22 +118,22 @@ export function useUserMedia(): UseUserMediaReturn {
 			}
 
 			if (!isMountedRef.current) {
-				stream.getTracks().forEach((track) => {
+				newStream.getTracks().forEach((track) => {
 					track.stop();
 				});
 				isLoadingRef.current = false;
 				return;
 			}
 
-			const audioTracks = stream.getAudioTracks();
-			const videoTracks = stream.getVideoTracks();
+			const audioTracks = newStream.getAudioTracks();
+			const videoTracks = newStream.getVideoTracks();
 			const newHasAudio = audioTracks.length > 0;
 			const newHasVideo = videoTracks.length > 0;
 
-			localStream.current = stream;
+			localStream.current = newStream;
 			isLoadingRef.current = false;
 			setIsLoading(false);
-			setStream(stream);
+			setStream(newStream);
 			setHasAudio(newHasAudio);
 			setHasVideo(newHasVideo);
 			setIsAudioEnabled(
@@ -146,6 +146,15 @@ export function useUserMedia(): UseUserMediaReturn {
 		},
 		[stopUserMediaStream],
 	);
+
+	useEffect(() => {
+		isMountedRef.current = true;
+
+		return () => {
+			isMountedRef.current = false;
+			stopUserMediaStream();
+		};
+	}, [stopUserMediaStream]);
 
 	return {
 		mediaAvailable,

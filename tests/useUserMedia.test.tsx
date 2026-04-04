@@ -43,7 +43,7 @@ describe('useUserMedia', () => {
 		mockGetUserMedia.mockResolvedValue(createMockStream());
 	});
 
-	describe('initialization', () => {
+	describe('life cycle', () => {
 		it('should initialize with default state', () => {
 			const { result } = renderHook(() => useUserMedia());
 
@@ -55,6 +55,21 @@ describe('useUserMedia', () => {
 			expect(result.current.hasVideo).toBe(false);
 			expect(result.current.isAudioEnabled).toBe(false);
 			expect(result.current.isVideoEnabled).toBe(false);
+		});
+
+		it('should stop all media tracks on unmount', async () => {
+			const { result, unmount } = renderHook(() => useUserMedia());
+
+			await act(async () => {
+				await result.current.getUserMediaStream();
+			});
+
+			expect(result.current.stream).not.toBeNull();
+
+			unmount();
+
+			expect(mockAudioTrack.stop).toHaveBeenCalled();
+			expect(mockVideoTrack.stop).toHaveBeenCalled();
 		});
 	});
 

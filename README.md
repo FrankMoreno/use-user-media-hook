@@ -1,6 +1,6 @@
 # use-user-media-hook
 
-A React hook for accessing user audio and video devices via the MediaStream API. This hook requires no additional dependencies.
+A React hook for accessing user audio and video devices via the MediaStream API. Resource cleanup is handled automatically on unmount. This hook requires no additional dependencies.
 
 [![CI](https://github.com/FrankMoreno/use-user-media-hook/actions/workflows/ci.yml/badge.svg)](https://github.com/FrankMoreno/use-user-media-hook/actions/workflows/ci.yml)
 [![Release](https://github.com/FrankMoreno/use-user-media-hook/actions/workflows/release.yml/badge.svg)](https://github.com/FrankMoreno/use-user-media-hook/actions/workflows/release.yml)
@@ -54,7 +54,7 @@ Returns an object with the following properties:
 - `hasVideo: boolean` - Whether video tracks are present
 - `isAudioEnabled: boolean` - Whether audio is currently enabled
 - `isVideoEnabled: boolean` - Whether video is currently enabled
-- `getUserMediaStream(constraints: MediaStreamConstraints): Promise<void>` - Request media stream
+- `getUserMediaStream(constraints?: MediaStreamConstraints): Promise<void>` - Request media stream, defaults to request 1080p video and audio if no constraints are provided
 - `stopUserMediaStream(): void` - Stop and release the media stream
 - `setAudioState(enabled: boolean): void` - Toggle audio tracks
 - `setVideoState(enabled: boolean): void` - Toggle video tracks
