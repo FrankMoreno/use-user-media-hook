@@ -4,6 +4,7 @@
     "pretty": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "sourceMap": true,
     "jsx": "react-jsx",
     "strict": true,
     "lib": ["ESNEXT", "DOM", "DOM.Iterable"],
