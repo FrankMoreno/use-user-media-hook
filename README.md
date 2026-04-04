@@ -1,6 +1,6 @@
 # use-user-media-hook
 
-A React hook for accessing user audio and video devices via the MediaStream API.
+A React hook for accessing user audio and video devices via the MediaStream API. This hook requires no additional dependencies.
 
 [![CI](https://github.com/FrankMoreno/use-user-media-hook/actions/workflows/ci.yml/badge.svg)](https://github.com/FrankMoreno/use-user-media-hook/actions/workflows/ci.yml)
 [![Release](https://github.com/FrankMoreno/use-user-media-hook/actions/workflows/release.yml/badge.svg)](https://github.com/FrankMoreno/use-user-media-hook/actions/workflows/release.yml)
@@ -59,6 +59,8 @@ Returns an object with the following properties:
 - `setAudioState(enabled: boolean): void` - Toggle audio tracks
 - `setVideoState(enabled: boolean): void` - Toggle video tracks
 
+More details on constraints that can be passed can be found [here](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia#constraints)
+
 ## Development
 
 ### Build
@@ -80,6 +82,11 @@ npm run lint:fix
 npm run format
 ```
 
+### Testing
+```bash
+npm run test
+```
+
 ## CI/CD
 
 This project uses GitHub Actions for continuous integration and automated releases:
@@ -98,4 +105,4 @@ Releases are automatically managed by semantic-release based on commit messages:
 
 ## License
 
-ISC
+MIT

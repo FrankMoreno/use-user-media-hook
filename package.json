@@ -29,8 +29,8 @@
 		"check": "biome check src/ tests/",
 		"check:fix": "biome check src/ tests/ --fix",
 		"lint": "biome lint src/",
-		"lint:fix": "biome lint src/ --fix",
-		"format": "biome format src/ --write",
+		"lint:fix": "biome lint src/ tests/ --fix",
+		"format": "biome format src/ tests/ --write",
 		"test": "vitest run",
 		"prepare": "npm run build"
 	},
@@ -41,7 +41,7 @@
 		"@types/react": "^19.2.14",
 		"jsdom": "^29.0.1",
 		"react": "^19.2.4",
-		"typescript": "^5.4.5",
+		"typescript": "^6.0.2",
 		"vitest": "^4.1.2"
 	},
 	"peerDependencies": {
@@ -53,5 +53,6 @@
 	},
 	"publishConfig": {
 		"access": "public"
-	}
+	},
+	"keywords": ["react", "getUserMedia", "useUserMedia", "hook", "media", "stream", "audio", "video"]
 }
